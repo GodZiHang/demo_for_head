@@ -1,0 +1,17 @@
+
+
+var index = 0;
+
+//改变图片
+function ChangeImg() {
+    index++;
+    let a = document.getElementsByClassName("img-slide");
+    if(index>=a.length) index=0;
+    for(let i=0; i<a.length; i++){
+        a[i].style.display='none';
+    }
+    a[index].style.display='block';
+    console.log(index)
+}
+//设置定时器，每隔两秒切换一张图片
+setInterval(ChangeImg,2000);

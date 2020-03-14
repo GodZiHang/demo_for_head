@@ -1,0 +1,40 @@
+p{
+    text-align: center;
+    font-size: 25px;
+    color: cadetblue;
+    font-family: fantasy;
+
+}
+
+.imgBox{
+    border-top: 2px solid cadetblue;
+    width: 50%;
+    height: 500px;
+    margin: 0 auto;
+
+}
+
+.imgBox img{
+    width: 60%;
+    height: 300px;
+    margin: 0 auto;
+    padding-top: 30px;
+
+}
+
+.img1{
+    display: block;
+}
+
+.img2{
+    display: none;
+}
+
+.try{
+    height: 100px;
+    width: 100px;
+    background-color: rgba(128,128,128,0.5);
+}
+.try:before{
+    content: "\f130"
+}

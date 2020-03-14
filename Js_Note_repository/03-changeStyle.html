@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>网页换肤</title>
+</head>
+<style>
+    body{background: black;}
+    input {width: 200px; height: 100px; background: yellow;}
+</style>
+<link id = 'l1' rel="stylesheet" type="text/css" href="ossl.css" />
+<script>
+    function skin1() {
+        var oL=document.getElementById('l1')
+        oL.href='css1.css'//此处没有实际的css文件
+    }
+    function skin2() {
+        var oL=document.getElementById('l1')
+        oL.href='css2.css'
+    }
+</script>
+<body>
+    <input type="button" value="皮肤1" onclick="skin1()"/>
+    <input tyle="button" value="皮肤2" onclick="skin2()"/>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>鼠标提示框</title>
+    <style>
+        #dev{width: 200px; height: 100px; background: #CCC;
+        border: 1px solid #999; display: none}
+    </style>
+</head>
+<body>
+    <input type="checkbox" onmouseover="document.getElementById('div1').style.display='block';"
+           onmouseout = "div1.style.display = 'none';" />
+    <!-- 笔记：部分浏览器不支持直接使用元素的id，而需要使用documen.getElementById的方法调用
+          所以一般情况下一定要用getElementById的方法-->
+    <div id = "div1">
+        为了您的安全...
+    </div>
+</body>
+</html>

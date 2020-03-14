@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用函数</title>
+    <style>
+        #div1 {width: 200px; height: 200px; background: red;}
+    </style>
+    <script>
+        function toGreen() {
+            document.getElementById('div1').style.width='300px';
+            document.getElementById('div1').style.height='300px';
+            document.getElementById('div1').style.background = 'green'
+        }
+
+        function toRed() {
+            var oDiv = document.getElementById('div1');//用变量替代部分代码
+            oDiv.style.width='200px';
+            oDiv.style.height='200px';
+            oDiv.style.background = 'red'
+        }
+        function changeText() {
+            var label = document.getElementById('txt1');
+            label.value = "改变文字！"
+        }
+        function changeUl() {
+            console.log("change")
+            var label = document.getElementById('u1');
+            if(label.style.display == 'none')
+            {
+                label.style.display = 'block';
+            }
+            else if(label.style.display == 'block'){
+                label.style.display = 'none';
+            }
+        }
+        //注意：JS不能改变元素类名，要改变类选择器时要是className属性； class在html中是保留字
+    </script>
+</head>
+<body>
+<!--    <div id = "div1" onmouseover="document.getElementById('div1').style.width='300px;-->
+<!--    document.getElementById('div1').style.height='300px';-->
+<!--    document.getElementById('div1').style.background = 'green'"></div>-->
+    <div id = "div1" onmouseover="toGreen()" onmouseout="toRed()"></div>
+    <input id = "txt1" type="text" />
+    <input type="button" value = "改文字" onclick="changeText()"/>
+    <a style="display:block; border: 1px solid black; width:200px;" onclick="changeUl()">使用if</a>
+    <ul id = "u1" style = "display: none; border: 1px solid black; width: 200px">
+        <li>选项1</li>
+        <li>选项2</li>
+        <li>选项3</li>
+        <li>选项4</li>
+    </ul>
+</body>
+</html>

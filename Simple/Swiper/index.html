@@ -1,0 +1,22 @@
+<!--这种实现方式很简单，首先设置所有图片的 display 属性为 none-->
+<!--用index 来标志此时展示的的图片-->
+<!--设置一个定时器，每隔一段时间令 index 自增并将对应的图片的 display 属性改为 block-->
+<!--缺点很多，比如缺乏指示条，不能手动切换，过渡也不平滑等，只是实现了展示不同图片的功能-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播1</title>
+    <link href="css/index.css" rel="stylesheet"/>
+
+</head>
+<body>
+    <p>图片轮播</p>
+    <div class="imgBox">
+        <img class="img-slide img1" src="images/img.jpg" alt="1">
+        <img class="img-slide img2" src="images/img2.jpg" alt="2">
+    </div>
+    <div class="try"></div>
+    <script src="js/index.js" />
+</body>
+</html>

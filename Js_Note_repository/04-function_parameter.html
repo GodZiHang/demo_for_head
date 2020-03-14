@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数传参</title>
+</head>
+<style>
+    #div1{width:200px; height:200px; background: red;}
+    #div2{width:200px; height:200px; background: red;}
+</style>
+<script>
+    function toColor(color) {
+        var oDiv = document.getElementById('div1');
+        oDiv.style.background = color;
+    }
+
+    function setStyle(name, value) {
+        console.log(name,value)
+        var oDiv = document.getElementById('div2');
+        //oDiv.style.name = value这样赋值是不行的，解释器会认为‘name’是style的一个属性的名字，即使它不存在于对象中
+        oDiv['style'][name] = value;
+        //变量不用加引号，字符串则需要加引号
+        //通过style改变的样式是行间样式，如果修改了style后，再改变className则不能改变效果
+    }
+</script>
+<body>
+    <input type="button" value = "变红" onclick="toColor('red')"/>
+    <input type="button" value = "变绿" onclick="toColor('green')"/>
+    <input type="button" value = "变黄" onclick="toColor('yellow')"/>
+    <div id = "div1"></div>
+    <input type="button" value = "变宽" onclick="setStyle('width','400px')">
+    <input type="button" value = "变高" onclick="setStyle('height','400px')">
+    <input type="button" value = "变绿" onclick="setStyle('background','green')">
+    <div id = "div2"></div>
+</body>
+</html>
