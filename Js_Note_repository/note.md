@@ -1,3 +1,5 @@
+# JavaScript学习笔记
+
 ## 快速入门
 
 ```javascript
@@ -144,6 +146,19 @@ JavaScript 在后来推出了严格模式，强制要求使用 `var` 声明变�
 
 > 不用 `var` 声明的变量会被视为全局变量。为了避免这一缺陷，所有的 JavaScript 代码都应该使用严格模式。在后面编写的 JavaScript 代码将全部采用严格模式。
 
+#### `==`运算的规则
+
+在使用`==`符号时，等号两边的值会进行隐式的类型转换，其具体表现如下：
+
+> - `JS`中的值有两种类型：原始类型(`Primitive`)、对象类型(`Object`)。
+> - 原始类型包括：`Undefined`、`Null`、`Boolean`、`Number`和`String`五种。
+> - `Undefined`类型和Null类型的都只有一个值，即`undefined`和`null`；`Boolean`类型有两个值：`true`和`false`；Number类型的值有很多很多；String类型的值理论上有无数个。
+> - 所有对象都有`valueOf()`和`toString()`方法，它们继承自`Object`，当然也可能被子类重写
+> - `undefined == null`，结果是`true`。且它俩与所有其他值比较的结果都是false。
+> - `String == Boolean`，需要两个操作数同时转为`Number`。
+> - `String/Boolean == Number`，需要`String/Boolean`转为`Number`。
+> - `Object == Primitive`，需要`Object`转为`Primitive`(具体通过`valueOf`和`toString`方法)
+
 ### 字符串
 
 #### 多行字符串
@@ -186,8 +201,6 @@ JavaScript 为字符串提供了一些常用方法。注意，调用这些方法
 ##### indexOf
 
 `indexOf()` 会搜索指定字符串出现的位置：
-
-
 
 ```javascript
 var s = "hello, world";
@@ -265,8 +278,6 @@ aCopy === arr;  // false
 ##### push 和 pop
 
 `push()` 向数组的末尾添加若干元素，`pop()` 则删除数组的末元素：
-
-
 
 ```javascript
 var arr = [1, 2];
@@ -812,8 +823,6 @@ function foo(a, b) {
 
 后来引入了 `rest` 参数，上面的函数可以改写为：
 
-
-
 ```javascript
 function foo(a, b, ...rest) {
     console.log("a = " + a);
@@ -839,4 +848,3 @@ b = undefined
 `rest` 参数只能写在最后，前面用 `...` 标识。从运行结果可知，传入的参数先绑定 `a`、`b`，多余的参数以数组形式交给变量 `rest`。所以不再需要 `arguments` 就获取了全部参数。
 
 如果传入的参数连正常定义的参数都没填满，也不要紧，`rest` 参数会接收一个空数组（注意不是 `undefined`）。
-
